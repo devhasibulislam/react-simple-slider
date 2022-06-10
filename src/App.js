@@ -1,23 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [sliders, setSliders] = useState([]);
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const url = `sliders.json`;
+    const getSlider = async () => {
+      const request = await fetch(url);
+      const response = await request.json();
+      console.log(response);
+      setSliders(response);
+    }; getSlider();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      {
+        sliders.map((slider, index) => <div
+          key={slider?._id}
+          className="img-container"
         >
-          Learn React
-        </a>
-      </header>
+          {
+            (index === current) &&
+            <>
+              <div className='left-arrow'
+                onClick={() => setCurrent(!(current === 0) ? current - 1 : sliders.length - 1) }
+              >
+                <i className="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+              </div>
+              <img src={slider?.img} alt="slider_image" />
+              <div className='right-arrow'
+                onClick={() => setCurrent(current === sliders.length - 1 ? 0 : current + 1) }
+              >
+                <i className="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+              </div>
+            </>
+          }
+        </div>)
+      }
     </div>
   );
 }

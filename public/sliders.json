@@ -1,0 +1,37 @@
+[
+    {
+        "_id": 1,
+        "img": "/assets/tesla-car-accessory.jpg",
+        "title": "Tesla Car Accessory"
+    },
+    {
+        "_id": 2,
+        "img": "/assets/tesla-model-3.jpg",
+        "title": "Tesla Model 3"
+    },
+    {
+        "_id": 3,
+        "img": "/assets/tesla-model-s.jpg",
+        "title": "Tesla Model S"
+    },
+    {
+        "_id": 4,
+        "img": "/assets/tesla-model-x.jpg",
+        "title": "Tesla Model X"
+    },
+    {
+        "_id": 5,
+        "img": "/assets/tesla-model-y.jpg",
+        "title": "Tesla Model Y"
+    },
+    {
+        "_id": 6,
+        "img": "/assets/tesla-solar-roof.jpg",
+        "title": "Tesla Solar Roof"
+    },
+    {
+        "_id": 7,
+        "img": "/assets/tesla-solar-panel.jpg",
+        "title": "Tesla Solar Panel"
+    }
+]
