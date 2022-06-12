@@ -30,7 +30,10 @@ function App() {
               >
                 <i className="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
               </div>
-              <img src={slider?.img} alt="slider_image" />
+              <div className='overlay'>
+                <img src={slider?.img} alt="slider_image" />
+                <h4>{slider?.title}</h4>
+              </div>
               <div className='right-arrow'
                 onClick={() => setCurrent(current === sliders.length - 1 ? 0 : current + 1) }
               >
